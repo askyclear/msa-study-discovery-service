@@ -12,3 +12,9 @@ true인 경우 검색시 Eureka Server를 호출하는 대신 레지스트리가
 
 eureka.server.responseCacheUpdateIntervalMs : 유레카 서버의 캐싱 업데이트 주기
 eureka.client.registryFetchIntervalSeconds : 서비스 목록을 캐싱할 주기
+
+### Docker
+
+docker run -d -p 8761:8761 --network ecommerce-network \
+-e "spring.cloud.config.uri=http://config-service:8888" \
+--name discovery-service askyclear/discovery-service
